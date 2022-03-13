@@ -92,6 +92,26 @@ function Hay.Iniciar(Arena)
 	Hay.Timer = setTimer(Hay.Move, 100, 0)
 end
 
+function Hay.Destruir()
+	if isTimer(Hay.Timer) then
+		killTimer(Hay.Timer)
+	end
+
+	for _, Object in pairs(Hay.Objects) do
+		if isElement(Object) then
+			destroyElement(Object)
+		end
+	end
+
+	if isElement(Hay.Pickup) then
+		destroyElement(Hay.Pickup)
+	end
+
+	if isElement(Hay.Final) then
+		destroyElement(Hay.Final)
+	end
+end
+
 function Hay.Move()
 	--outputDebugString("move entered")
 	local rand
@@ -185,198 +205,6 @@ function Hay.Done ( id, x, y, z )
 	Hay.Matrix[x][y][z] = 0
 end
 
---[[
--- Don't touch below!
-local matrix = {}
-local objects = {}
-local moving = {}
-local xy_speed
-local z_speed
-local barrier_x
-local barrier_y
-local barrier_r
-
-function move ()
-	--outputDebugString("move entered")
-	local rand
-	repeat
-		rand = math.random( 1, options.b )
-	until (moving[rand] ~= 1)
-	local object = objects[ rand ]
-	local move = math.random( 0, 5 )
-	--outputDebugString("move: " .. move)
-	local x,y,z
-	local x2,y2,z2 = getElementPosition ( object )
-	--Purge old player positions
-	for x = 1,options.x do
-		for y = 1,options.y do
-			for z = 1,options.z do
-				if (matrix[x][y][z] == 2) then
-					matrix[x][y][z] = 0
-				end
-			end
-		end
-	end
-	--Fill in new player positions
-	local players = getElementsByType( "player" )
-	for k,v in ipairs(players) do
-		x,y,z = getElementPosition( v )
-		x = math.floor(x / -4 + 0.5)
-		y = math.floor(y / -4 + 0.5)
-		z = math.floor(z / 3 + 0.5)
-		if (x >= 1) and (x <= options.x) and (y >= 1) and (y <= options.y) and (z >= 1) and (z <= options.z) and (matrix[x][y][z] == 0) then
-			matrix[x][y][z] = 2
-		end
-	end
-	x = x2 / -4
-	y = y2 / -4
-	z = z2 / 3
-	if (move == 0)  and (x ~= 1) and (matrix[x-1][y][z] == 0) then
-		moving[rand] = 1
-		local s = 4000 - xy_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		x = x - 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2 + 4, y2, z2, 0, 0, 0 )
-	elseif (move == 1) and (x ~= options.x) and (matrix[x+1][y][z] == 0) then
-		moving[rand] = 1
-		local s = 4000 - xy_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		x = x + 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2 - 4, y2, z2, 0, 0, 0 )
-	elseif (move == 2) and (y ~= 1) and (matrix[x][y-1][z] == 0) then
-		moving[rand] = 1
-		local s = 4000 - xy_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		y = y - 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2, y2 + 4, z2, 0, 0, 0 )
-	elseif (move == 3) and (y ~= options.y) and (matrix[x][y+1][z] == 0) then
-		moving[rand] = 1
-		local s = 4000 - xy_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		y = y + 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2, y2 - 4, z2, 0, 0, 0 )
-	elseif (move == 4) and (z ~= 1) and (matrix[x][y][z-1] == 0) then
-		moving[rand] = 1
-		local s = 3000 - z_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		z = z - 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2, y2, z2 - 3, 0, 0, 0 )
-	elseif (move == 5) and (z ~= options.z) and ((matrix[x][y][z+1] == 0) or ((z ~= options.z-1) and (matrix[x][y][z+1] == 2) and (matrix[x][y][z+2] ~= 1))) then
-		moving[rand] = 1
-		local s = 3000 - z_speed * z
-		setTimer (done, s, 1, rand, x, y, z)
-		z = z + 1
-		matrix[x][y][z] = 1
-		--outputDebugString("moving obj")
-		moveObject ( object, s, x2, y2, z2 + 3, 0, 0, 0 )
-	end
-	--	setTimer ("move", 100 )
-end
-
-function onThisResourceStart ( )
-	call(scoreboardRes,"addScoreboardColumn","Current level")
-	call(scoreboardRes,"addScoreboardColumn","Max level")
-	call(scoreboardRes,"addScoreboardColumn","Health")
-	--outputChatBox("* Haystack-em-up v1.44 by Aeron", root, 255, 100, 100)  --PFF meta is good enough :P
-	--Calculate speed velocity
-	xy_speed = 2000 / (options.z + 1)
-	z_speed = 1500 / (options.z + 1)
-
-	--Clean matrix
-	for x = 1,options.x do
-		matrix[x] = {}
-		for y = 1,options.y do
-			matrix[x][y] = {}
-			for z = 1,options.z do
-				matrix[x][y][z] = 0
-			end
-		end
-	end
-
-    --Place number of haybails in matrix
-	local x,y,z
-	for count = 1,options.b do
-		repeat
-			x = math.random ( 1, options.x )
-			y = math.random ( 1, options.y )
-			z = math.random ( 1, options.z )
-		until (matrix[x][y][z] == 0)
-		matrix[x][y][z] = 1
-		objects[count] = createObject ( 3374, x * -4, y * -4, z * 3 )
-	end
-
-	--Place number of rocks in matrix
-	for count = 1,options.r do
-		repeat
-			x = math.random ( 1, options.x )
-			y = math.random ( 1, options.y )
-			z = math.random ( 1, options.z )
-		until (matrix[x][y][z] == 0)
-		matrix[x][y][z] = 1
-		createObject ( 1305, x * -4, y * -4, z * 3, math.random ( 0, 359 ), math.random ( 0, 359 ), math.random ( 0, 359 ) )
-	end
-	
-	--Calculate tower center and barrier radius
-	barrier_x = (options.x + 1) * -2
-	barrier_y = (options.y + 1) * -2	
-	if (options.x > options.y) then 
-		barrier_r = options.x / 2 + 20 
-	else
-		barrier_r = options.y / 2 + 20 
-	end
-	
-	--Place top-haybail + minigun
-	createObject ( 3374, barrier_x, barrier_y, options.z * 3 + 3 )
-	thePickup = createPickup ( barrier_x, barrier_y, options.z * 3 + 6, 3, 2880, 1 )
-	setTimer ( move, 100, 0 )
-	setTimer ( barrier, 1000, 1)
-	fadeCamera ( getRootElement(), true )
-end
-
-function barrier ()
-	local barrier = createColCircle ( barrier_x, barrier_y, barrier_r )
-	addEventHandler ( "onColShapeLeave", barrier, function ( p )
-		if ( getElementType ( p ) == "player" ) then 
-			killPed ( p )
-			outputChatBox( "* Killed: Don't walk away.", p, 255, 100, 100 )
-			end
-		end )
-end
-
-function onPickupHit ( player )
-	if source == thePickup then
-		outputChatBox( "* " .. getPlayerName ( player ) .. " made it to the top!", root, 255, 100, 100, false )
-		toggleControl ( player, "fire", true )
-		destroyElement( source )
-	end
-end
-
-function done ( id, x, y, z )
-	moving[id] = 0
-	matrix[x][y][z] = 0
-end
-
---addEventHandler( "onResourceStart", root, function() onMapLoad() end)
---addEventHandler( "onPickupHit", root, function() onPickupHit() end)
---addEventHandler( "onPlayerJoin", root, function() onPlayerJoin() end)
-
-addEventHandler( "onResourceStart", getResourceRootElement(getThisResource()), onThisResourceStart)
-addEventHandler( "onPickupHit", root, onPickupHit)
-]]
-
-
-
-
 function Hay.unload()
 	outputServerLog(getElementID(source)..": Unloading Hay Definitions")
 
@@ -389,24 +217,8 @@ function Hay.unload()
 	setElementData(source, "state", "End")
 
 	outputDebugString("[HAY] Destruyendo objetos...")
-	
-	if isTimer(Hay.Timer) then
-		killTimer(Hay.Timer)
-	end
 
-	for _, Object in pairs(Hay.Objects) do
-		if isElement(Object) then
-			destroyElement(Object)
-		end
-	end
-
-	if isElement(Hay.Pickup) then
-		destroyElement(Hay.Pickup)
-	end
-
-	if isElement(Hay.Final) then
-		destroyElement(Hay.Final)
-	end
+	Hay.Destruir()
 end
 addEvent("onSetDownHayDefinitions", true)
 
@@ -508,6 +320,12 @@ function Hay.pickupHit(Player)
 end
 
 function Hay.Reiniciar(Arena)
-	triggerEvent('onSetDownHayDefinitions', Arena)
-	triggerEvent('onSetUpHayDefinitions', Arena)
+	Hay.Destruir()
+
+	for _, Player in pairs(getAlivePlayersInArena(Arena)) do
+		Hay.SpawnPlayer(Player)
+		triggerClientEvent(Player, "onClientResetHay", Arena, false, false)
+	end
+	
+	Hay.Iniciar(Arena)
 end
