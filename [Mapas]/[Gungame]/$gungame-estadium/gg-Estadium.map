@@ -1,0 +1,37 @@
+<map edf:definitions="Gungame,editor_main">
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" posX="1355.022" posY="2126.5439" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (2)" interior="0" skin="121" dimension="0" posX="1339.76001" posY="2141.54004" posZ="11.77" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1371.229" posY="2196.4109" posZ="9.758" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1298.65" posY="2105.949" posZ="11.023" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1342.192" posY="2158.6931" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1324.632" posY="2171.9519" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1311.974" posY="2135.698" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1323.4399" posY="2136.261" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1377.2419" posY="2121.1411" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1370.531" posY="2171.9399" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1325.111" posY="2114.437" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1410.631" posY="2147.395" posZ="12.016" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1369.9424" posY="2142.8057" posZ="11.52" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1311.787" posY="2213.2251" posZ="12.016" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1401.0469" posY="2124.71" posZ="14.123" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1396.7998" posY="2208.2637" posZ="12.016" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1360.2324" posY="2207.5518" posZ="12.57" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1404.345" posY="2109.9619" posZ="16.797" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1302.1943" posY="2212.8105" posZ="18.539" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1411.017" posY="2186.8779" posZ="18.647" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (1)" interior="0" skin="121" dimension="0" alpha="255" posX="1411.0166" posY="2186.8779" posZ="18.647" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <object id="object (vgsSairportland06) (1)" breakable="true" interior="0" alpha="0" model="8171" doublesided="false" scale="1" dimension="0" posX="1295.5389" posY="2163.3621" posZ="11.729" rotX="0" rotY="90" rotZ="0"></object>
+    <object id="object (vgsSairportland06) (2)" breakable="true" interior="0" alpha="0" model="8171" doublesided="false" scale="1" dimension="0" posX="1328.089" posY="2099.855" posZ="11.729" rotX="0" rotY="90" rotZ="90"></object>
+    <object id="object (vgsSairportland06) (3)" breakable="true" interior="0" alpha="0" model="8171" doublesided="false" scale="1" dimension="0" posX="1463.007" posY="2099.157" posZ="11.729" rotX="0" rotY="90" rotZ="90"></object>
+    <object id="object (vgsSairportland06) (4)" breakable="true" interior="0" alpha="0" model="8171" doublesided="false" scale="1" dimension="0" posX="1305.968" posY="2222.1741" posZ="32.149" rotX="0" rotY="90" rotZ="90"></object>
+    <object id="object (vgsfrates07) (1)" breakable="true" interior="0" alpha="255" model="8078" doublesided="false" scale="1" dimension="0" posX="1317.8459" posY="2154.3831" posZ="14.022" rotX="0" rotY="0" rotZ="32"></object>
+    <object id="object (laxrf_scrapbox) (1)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1303.4" posY="2181.8711" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laxrf_scrapbox) (2)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1303.615" posY="2167.9089" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laxrf_scrapbox) (3)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1303.678" posY="2153.217" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laxrf_scrapbox) (4)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1303.902" posY="2138.8589" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laxrf_scrapbox) (5)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1304.271" posY="2128.4189" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laxrf_scrapbox) (6)" breakable="true" interior="0" alpha="255" model="3722" doublesided="false" scale="1" dimension="0" posX="1304.396" posY="2114.0649" posZ="8.217" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (CJ_CHRIS_CRATE) (1)" breakable="true" interior="0" alpha="255" model="2669" doublesided="false" scale="1" dimension="0" posX="1377.103" posY="2142.6941" posZ="11.356" rotX="0" rotY="0" rotZ="206"></object>
+    <object id="object (rsdncarprk01_lvs) (1)" breakable="true" interior="0" alpha="255" model="8841" doublesided="false" scale="1" dimension="0" posX="1339.828" posY="2179.1699" posZ="4.885" rotX="0" rotY="342" rotZ="92"></object>
+    <object id="object (dockcranescale0) (1)" breakable="true" interior="0" alpha="255" model="5126" doublesided="false" scale="1" dimension="0" posX="1336.58" posY="2124.553" posZ="16.29" rotX="0" rotY="26" rotZ="0"></object>
+</map>

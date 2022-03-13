@@ -1,0 +1,51 @@
+<meta>
+    <script src="tel.lua" type="client" />
+    <script src="music.lua" type="client" />
+    <script src="texturevervangen.lua" type="client" />
+    <script src="texturevervangen1.lua" type="client" />
+    <script src="lol.lua" type="client" />
+    <script src="lol1.lua" type="client" />
+    <script src="lol2.lua" type="client" />
+    <script src="lights.lua" type="client" />
+    <script src="textures.lua" type="client" />
+    <script src="script.lua" type="client" />
+    <script src="script1.lua" type="client" />
+    <script src="rendering.lua" type="client"></script>
+    <script src="sky.lua" type="client"></script>
+    <file src="song.mp3" />
+    <file src="texreplace.fx" />
+    <file src="stopbord/left/lframe0.png" type="client" />
+    <file src="stopbord/left/lframe1.png" type="client" />
+    <file src="stopbord/left/lframe2.png" type="client" />
+    <file src="stopbord/right/rframe0.png" type="client" />
+    <file src="stopbord/right/rframe1.png" type="client" />
+    <file src="stopbord/right/rframe2.png" type="client" />
+    <file src="stopbord/right/rframe3.png" type="client" />
+    <file src="files/lights.fx" />
+    <file src="files/vehiclelightson128.png" />
+    <file src="infernus2.txd" type="client" />
+    <file src="Electricgate.dff" type="client" />
+    <file src="electricgate.txd" type="client" />
+    <file src="trance-frac9.txd"></file>
+    <file src="trance.dff"></file>
+    <file src="infernus.dff" type="client" />
+    <info gamemodes="race" type="map" name="[DM] D0GGy - Vol.7 - D0GGy&apos;s style" version="1.0.0"></info>
+    <map src="1d0ggyspeed_smooth_easy.map" dimension="0"></map>
+    <settings>
+        <setting name="#skins" value='[ &quot;cj&quot; ]'></setting>
+        <setting name="#maxplayers" value="[ 128 ]"></setting>
+        <setting name="#useLODs" value="[ false ]"></setting>
+        <setting name="#gamespeed" value="[ 1 ]"></setting>
+        <setting name="#ghostmode" value='[ &quot;true&quot; ]'></setting>
+        <setting name="#time" value="0:0"></setting>
+        <setting name="#vehicleweapons" value='[ &quot;true&quot; ]'></setting>
+        <setting name="#minplayers" value="[ 0 ]"></setting>
+        <setting name="#weather" value="[ 3 ]"></setting>
+        <setting name="#gravity" value="[ 0.0080000003799796104 ]"></setting>
+        <setting name="#waveheight" value="[ 0 ]"></setting>
+        <setting name="#respawntime" value="[ 5 ]"></setting>
+        <setting name="#locked_time" value="[ true ]"></setting>
+        <setting name="#duration" value="[ 1800 ]"></setting>
+        <setting name="#respawn" value='[ &quot;none&quot; ]'></setting>
+    </settings>
+</meta>

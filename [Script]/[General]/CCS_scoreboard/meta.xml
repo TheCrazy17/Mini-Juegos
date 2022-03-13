@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai" version="1" type="script" name="Scoreboard" description="Scoreboard"/>
+	<script src="scoreboard_c.lua" type="client" cache="false"/>
+	<script src="scoreboard_s.lua" type="server" />
+	<file src="RobotoCondensed-Regular.ttf" />
+</meta>
